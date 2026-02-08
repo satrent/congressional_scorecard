@@ -4,3 +4,16 @@ GET {{ScorecardAPI_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+# Congress member - with mockdata header (returns mock record)
+GET {{ScorecardAPI_HostAddress}}/api/congressmember/any-id
+Accept: application/json
+mockdata: true
+
+###
+
+# Congress member - without mockdata header (returns 404 until DB is implemented)
+GET {{ScorecardAPI_HostAddress}}/api/congressmember/any-id
+Accept: application/json
+
+###
