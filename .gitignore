@@ -1,0 +1,52 @@
+# Helper files
+.git/
+.svn/
+.hg/
+
+# Node/Angular
+node_modules/
+dist/
+tmp/
+out-tsc/
+bazel-out/
+.angular/
+.npm/
+.yarn/
+yarn-error.log
+.pnp.cjs
+.pnp.loader.mjs
+
+# Visual Studio / C#
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.pdb
+*.cache
+*.dll
+*.exe
+*.obj
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# OS
+Thumbs.db
+.DS_Store
+Desktop.ini
+
+# Environment variables
+.env
+.env.local
+.env.*.local
