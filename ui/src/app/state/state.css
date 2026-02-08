@@ -1,0 +1,36 @@
+.state-container {
+    padding: 2rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #0055aa;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    color: #0055aa;
+    margin: 0;
+}
+
+.back-link {
+    color: #666;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.scorecard-content {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 4px;
+}

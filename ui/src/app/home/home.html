@@ -1,0 +1,14 @@
+<div class="home-container">
+  <h1>Farmed Animals Advocacy Congressional Scorecard</h1>
+  <p>Select a state to view the scorecard.</p>
+
+  <div class="map-container">
+    <svg xmlns="http://www.w3.org/2000/svg" [attr.viewBox]="map.viewBox" [attr.aria-label]="map.label" class="us-map">
+
+      @for (location of map.locations; track location.id) {
+      <path [id]="location.id" [attr.name]="location.name" [attr.d]="location.path" class="state"
+        (click)="onStateClick(location.id)" [title]="location.name"></path>
+      }
+    </svg>
+  </div>
+</div>
