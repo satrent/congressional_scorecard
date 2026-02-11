@@ -22,7 +22,7 @@ The application uses DynamoDB. You can seed the database using the `DbSeeder` to
 # Set your AWS credentials
 $env:AWS_ACCESS_KEY_ID="YOUR_ACCESS_KEY"
 $env:AWS_SECRET_ACCESS_KEY="YOUR_SECRET_KEY"
-$env:AWS_REGION="us-east-2"
+$env:AWS_REGION="us-east-1"
 
 # Run the seeder
 cd api/DbSeeder
@@ -41,7 +41,7 @@ dotnet user-secrets init
 # Set your AWS secrets
 dotnet user-secrets set "AWS:AccessKey" "YOUR_ACCESS_KEY"
 dotnet user-secrets set "AWS:SecretKey" "YOUR_SECRET_KEY"
-dotnet user-secrets set "AWS:Region" "us-east-2"
+dotnet user-secrets set "AWS:Region" "us-east-1"
 
 # Run the API
 dotnet run
