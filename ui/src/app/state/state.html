@@ -5,7 +5,18 @@
     </div>
 
     <div class="scorecard-content">
-        <p>Congressional Scorecard for {{ stateName }} will appear here.</p>
-        <!-- Placeholder for scorecard list -->
+        <div *ngIf="members.length === 0">
+            <p>No members found for this state.</p>
+        </div>
+
+        <div class="members-grid">
+            <div *ngFor="let member of members" class="member-card">
+                <h3>{{ member.firstName }} {{ member.lastName }}</h3>
+                <p>District: {{ member.district || 'At-Large' }}</p>
+                <div class="score-badge">
+                    Score: {{ member.advocacyScore }}
+                </div>
+            </div>
+        </div>
     </div>
 </div>

@@ -35,7 +35,7 @@ public class CongressMemberController : ControllerBase
         // Scan assumes State is not a key. For better performance, use a GSI.
         var conditions = new List<ScanCondition>
         {
-            new ScanCondition(nameof(CongressMember.State), Amazon.DynamoDBv2.DocumentModel.ScanOperator.Equal, state)
+            new ScanCondition(nameof(CongressMember.State), Amazon.DynamoDBv2.DocumentModel.ScanOperator.Equal, state.ToUpper())
         };
 
         var members = await _context.ScanAsync<CongressMember>(conditions).GetRemainingAsync();
