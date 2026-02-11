@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { CongressService, CongressMember } from '../services/congress.service';
@@ -16,7 +16,11 @@ export class State implements OnInit {
     stateName: string = '';
     members: CongressMember[] = [];
 
-    constructor(private route: ActivatedRoute, private congressService: CongressService) { }
+    constructor(
+        private route: ActivatedRoute,
+        private congressService: CongressService,
+        private cdr: ChangeDetectorRef
+    ) { }
 
     ngOnInit() {
         this.route.paramMap.subscribe((params: ParamMap) => {
@@ -29,7 +33,11 @@ export class State implements OnInit {
     loadMembers() {
         if (this.stateId) {
             this.congressService.getMembersByState(this.stateId).subscribe({
-                next: (data) => this.members = data,
+                next: (data) => {
+                    console.log('DEBUG: State API Data:', data);
+                    this.members = data;
+                    this.cdr.detectChanges(); // Force view update
+                },
                 error: (err) => console.error('Error fetching members', err)
             });
         }
